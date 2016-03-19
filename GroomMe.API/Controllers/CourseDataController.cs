@@ -29,7 +29,7 @@ namespace Web.API.Kata.Controllers
 
         // GET api/coursedata
         [EnableCors(origins: "*", headers: "*", methods: "GET")]
-        [System.Web.Http.Authorize(Roles = "Administrator")]
+        //[System.Web.Http.Authorize(Roles = "Administrator")]
         public async Task<IHttpActionResult> Get()
         {
             var results = await GetViewModels();
