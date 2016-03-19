@@ -36,6 +36,8 @@ namespace Web.API.Kata.Controllers
         //[System.Web.Http.Authorize(Roles = "Administrator")]
         public async Task<IHttpActionResult> Get()
         {
+            Log.Info("In Get Method");
+
             try
             {
                 var results = await GetViewModels();
