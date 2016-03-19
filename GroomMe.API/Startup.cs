@@ -8,6 +8,7 @@ using Owin;
 
 namespace Web.API.Kata
 {
+    //Startup
     public partial class Startup
     {
         public void Configuration(IAppBuilder app)
