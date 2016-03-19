@@ -41,6 +41,7 @@ namespace Web.API.Kata
             //serializerSettings.Converters.Add(new CustomDateConverter());
             //GlobalConfiguration.Configuration.Formatters[0] = new (serializerSettings);
 
+            log4net.Config.XmlConfigurator.Configure();
             	
             var jsonFormatter = config.Formatters.JsonFormatter; 
             var settings = jsonFormatter.SerializerSettings; 

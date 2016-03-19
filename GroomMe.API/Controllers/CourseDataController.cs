@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using System.Web.Mvc;
+using log4net;
 using MVC.Kata.Data;
 using MVC.Kata.Models;
 using Newtonsoft.Json;
@@ -20,6 +21,9 @@ namespace Web.API.Kata.Controllers
         private CourseRepository _courseRepository;
         private TagsRepository _tagRepository;
 
+        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+ 
+
         public CourseDataController(CourseRepository courseRepository, TagsRepository tagsRepository)
         {
             _courseRepository = courseRepository;
@@ -32,9 +36,17 @@ namespace Web.API.Kata.Controllers
         //[System.Web.Http.Authorize(Roles = "Administrator")]
         public async Task<IHttpActionResult> Get()
         {
-            var results = await GetViewModels();
+            try
+            {
+                var results = await GetViewModels();
 
-            return Ok(results);
+                return Ok(results);
+            }
+            catch (Exception ex)
+            {
+              Log.Error(ex);
+                return InternalServerError();
+            }
         }
 
         // GET api/coursedata/5

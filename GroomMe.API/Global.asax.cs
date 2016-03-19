@@ -8,6 +8,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using Newtonsoft.Json;
 
+[assembly: log4net.Config.XmlConfigurator(Watch = true)]
 namespace Web.API.Kata
 {
     public class WebApiApplication : System.Web.HttpApplication
