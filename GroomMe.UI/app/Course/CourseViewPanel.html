@@ -1,0 +1,38 @@
+﻿  <div id="infoPanel" class="panel fixed-panel">
+    <div class="panel panel-heading">
+        {{model.name}}
+        <span class="pull-right">
+            <button class="btn btn-xs btn-primary" ng-click="edit()">
+                <span class="glyphicon glyphicon-edit"></span>
+            </button>
+        </span>
+    </div>
+    <div class="panel-body">
+        <div class="col-lg-6 col-lg-offset-4">
+            <div><percent-display percent="model.precentage" side="90" colors="#CCE0CC #006400"></percent-display></div>
+        </div>
+        <div class="col-lg-8 col-lg-offset-4">
+            <span class="glyphicon glyphicon-user glyphicon-color" aria-hidden="true" />
+            {{model.author}}
+        </div>
+        <div class="col-lg-4">
+            <span class="glyphicon glyphicon-calendar glyphicon-color" aria-hidden="true" />
+            {{model.startedDateTime}}
+        </div>
+        <div class="col-lg-4 col-lg-offset-4">
+            <span class="glyphicon glyphicon-tower glyphicon-color" aria-hidden="true" />
+            {{model.endDateTime}}
+        </div>
+
+        <div class="row">
+            <div ng-repeat="tag in model.tags" class="col-lg-4">
+                <h5><span class="label label-pill label-warning">{{tag.text}}</span></h5>
+            </div>
+        </div>
+
+    </div>
+</div>
+    
+
+
+

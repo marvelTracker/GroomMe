@@ -1,0 +1,130 @@
+﻿<div class="row">
+    <div class="col-lg-3 col-lg-pull-1">
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default" id="panel1">
+                <div class="panel-heading">
+                    <h4 class="panel-title clearfix">
+                        Filters<button type="submit" class="btn btn-warning btn-xs pull-right" ng-click="clearFilter()">Clear</button>
+                    </h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default" id="panel2">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-target="#statusFilter">
+                            Status
+                        </a>
+                    </h4>
+                </div>
+                <div id="statusFilter" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label><input type="checkbox" ng-model="checkboxModel.newCourse.selected" ng-change="filterStatus(checkboxModel.newCourse)"><span class="label label-danger">New</span></label>
+                            </div>
+                            <div class="checkbox">
+                                <label><input type="checkbox" ng-model="checkboxModel.todoCourse.selected" ng-change="filterStatus(checkboxModel.todoCourse)"><span class="label label-info">To do</span></label>
+                            </div>
+                            <div class="checkbox">
+                                <label><input type="checkbox" ng-model="checkboxModel.inprogressCourse.selected" ng-change="filterStatus(checkboxModel.inprogressCourse)"><span class="label label-warning">In Progress</span></label>
+                            </div>
+                            <div class="checkbox">
+                                <label><input type="checkbox" ng-model="checkboxModel.doneCourse.selected" ng-change="filterStatus(checkboxModel.doneCourse)"><span class="label label-success">Done</span></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default" id="panel3">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-target="#tagFilter">
+                            Tags
+                        </a>
+                    </h4>
+                </div>
+                <div id="tagFilter" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <div class="form-horizontal">
+                            <div class="form-group-sm">
+                                <tags-input class="bootstrap" ng-model="filterTags.tags" replace-spaces-with-dashes="true"></tags-input>
+                            </div>
+
+                            <div class="form-group-sm">
+                                <button type="submit" class="btn btn-success" ng-click="filterByTags()">GO</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default" id="panel4">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-target="#dateFilter" class="collapsed">
+                            Dates
+                        </a>
+                    </h4>
+                </div>
+                <div id="dateFilter" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="form-horizontal">
+                            <div class="form-group-sm">
+                                <label><small>Start Date</small></label>
+                                <date-time-picker required="false" callback="setFilterStartDate(data)" small="true"></date-time-picker>
+                            </div>
+                            <div class="form-group-sm">
+                                <label><small>End Date</small></label>
+                                <date-time-picker required="false" callback="setFilterEndDate(data)"  small="true"></date-time-picker>
+                            </div>
+                            <div class="form-group-sm">
+                                <button type="submit" class="btn btn-success" ng-click="filterByDate()">GO</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default" id="panel5">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-target="#completionFilter" class="collapsed">
+                            Completion <span class="badge">{{filterPrecentage}}</span>
+                        </a>
+                    </h4>
+                </div>
+                <div id="completionFilter" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="form-horizontal">
+                            <div class="form-group-sm cdbl-slider" my-slider config="filterSliderConfig" model="filterPrecentage">
+
+                            </div>
+                            <div class="form-group-sm">
+                                <button type="submit" class="btn btn-success" ng-click="filterByPrecentage()">GO</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-lg-9">
+        <div class="alert alert-info col-lg-12 col-lg-pull-1" role="alert"><span class="glyphicon glyphicon-list pull-left"></span> Resources: {{filterCourse.totalItems}}</div>
+
+        <div ng-repeat="course in courses|courseFilter:filterCourse">
+            <div class="col-lg-6 col-lg-pull-1">
+                <courseview-info-panel course="course"></courseview-info-panel>
+            </div>
+        </div>
+    </div>
+</div>
+
+

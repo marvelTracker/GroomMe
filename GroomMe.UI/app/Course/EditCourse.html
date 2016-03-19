@@ -1,0 +1,78 @@
+﻿<div class="panel panel-info">
+    <div class="panel panel-heading">
+        Edit Resource <span class="glyphicon glyphicon-pencil pull-right"></span>
+    </div>
+    <div class="panel-body form-horizontal">
+        <form class="form-horizontal" name="editCourseForm" novalidate role="form">
+            <div class="form-group">
+                <div class="col-md-2">
+                    <label for="courseName">Resource Name</label>
+                </div>
+                <div class="col-md-4" ng-class="{'has-error':editCourseForm.courseName.$invalid && (editCourseForm.courseName.$touched ||editCourseForm.$submitted)}">
+                    <input type="text" class="form-control" id="courseName" name="courseName" placeholder="" ng-model="editCourse.name" required />
+                    <span class="help-block" ng-show="editCourseForm.courseName.$error.required">Course Name is required.</span>
+                </div>
+                <div class="col-md-2">
+                    <label for="Author">Author</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" id="Author" name="Author" placeholder="" ng-model="editCourse.author" ng-init="course.author=''" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    <label for="StartDate">Start Date</label>
+                </div>
+                <div class="col-md-4">
+                    <date-time-picker required="false" callback="setEditStartDate(data)" setdatemodel="editCourse.sDate"></date-time-picker>
+
+                </div>
+                <div class="col-md-2">
+                    <label for="EndDate">End Date</label>
+                </div>
+                <div class="col-md-4">
+                    <date-time-picker required="false" callback="setEditEndDate(data)" setdatemodel="editCourse.eDate"></date-time-picker>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    <label for="Description">Description</label>
+                </div>
+                <div class="col-md-4">
+                    <textarea class="form-control" rows="5" placeholder="" id="Description" ng-model="editCourse.description" ng-init="course.description=''"></textarea>
+                </div>
+                <div class="col-md-2">
+                    <label for="Status">Status</label>
+                </div>
+                <div class="col-md-4">
+                    <select class="form-control" id="CourseStatus" ng-model="editCourse.courseStatus" ng-options="option.id as option.name for option in courseStatues">
+                        <option value=""></option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    <label for="Tags">Tags</label>
+                </div>
+                <div class="col-md-8">
+                    <tags-input class="bootstrap" ng-model="editCourse.tags" replace-spaces-with-dashes="true"></tags-input>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    <label id="Completion">Completion<span class="badge pull-right">{{editCourse.precentage}}</span></label>
+                </div>
+                <div class="col-md-6">
+                    <div my-slider class="cdbl-slider" config="sliderConfig" model="editCourse.precentage"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-4">
+                    <button type="submit" class="btn btn-success" ng-click="editCourseAndSave()"><span class="glyphicon  glyphicon-floppy-disk" aria-hidden="true"></span> Save</button>
+                    <button type="reset" class="btn btn-warning"><span class="glyphicon  glyphicon-exclamation-sign" aria-hidden="true"></span> Clear</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
