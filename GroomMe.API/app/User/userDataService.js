@@ -1,6 +1,9 @@
 ﻿(function () {
     var app = angular.module("mainModule");
 
+    var baseUrl = "http://groomme.apphb.com";
+    //var baseUrl = "http://localhost:54052";
+
     var userDataService = function ($http) {
 
         var profile = {
@@ -42,7 +45,7 @@
 
         var userLogin = function (user) {
             return $http({
-                url: "http://localhost:54052/token",
+                url: baseUrl  + "/token",
                 method: "POST",
                 data: "userName=" + user.UserName + "&password=" + user.Password + 
               "&grant_type=password",
@@ -59,7 +62,7 @@
 
         var registerUser = function (user) {
            return $http({
-                url: "http://localhost:54052/api/Account/Register",
+                url: baseUrl + "/api/Account/Register",
                 method: "POST",
                 data: { 'UserName': user.UserName, 'Email':user.Email, 'Password': user.Password, 'ConfirmPassword': user.ConfirmPassword },
 

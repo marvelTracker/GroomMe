@@ -2,10 +2,13 @@
     var app = angular.module("mainModule");
 
     var courseDataService = function ($http, userDataService) {
+
+        var baseUrl = "http://groomme.apphb.com/api/CourseData";
+        //var baseUrl = "http://localhost:54052/api/CourseData";
         
         var getCourse = function (courseid) {
            return $http({
-               url: "http://localhost:54052/api/CourseData/" + courseid,
+               url: baseUrl + "/" + courseid,
                 method: "GET",
                 dataType: 'json',
                 headers: {
@@ -22,7 +25,7 @@
 
         var getCourseData = function() {
             return $http({
-                url: "http://localhost:54052/api/CourseData",
+                url: baseUrl,
                 method: "GET",
 
                 headers: {
@@ -39,7 +42,7 @@
         var saveNewCourse = function (course) {
 
          return $http({
-                url: "http://localhost:54052/api/CourseData",
+             url: baseUrl,
                 method: "POST",
                 data: "name=" + course.courseName + 
                     "&author=" + course.author +
@@ -65,7 +68,7 @@
         var editCourse = function(course)
         {
             return $http({
-                url: "http://localhost:54052/api/CourseData/" + course.courseId,
+                url: baseUrl + "/" + course.courseId,
                 method: "PUT",
                 data: "name=" + course.name +
                     "&author=" + course.author +
