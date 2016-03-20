@@ -36,8 +36,6 @@ namespace Web.API.Kata.Controllers
         //[System.Web.Http.Authorize(Roles = "Administrator")]
         public async Task<IHttpActionResult> Get()
         {
-            Log.Info("In Get Method");
-
             try
             {
                 var results = await GetViewModels();
@@ -46,7 +44,7 @@ namespace Web.API.Kata.Controllers
             }
             catch (Exception ex)
             {
-              Log.Error(ex);
+                Log.Error(ex);
                 return InternalServerError();
             }
         }
@@ -71,11 +69,19 @@ namespace Web.API.Kata.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IHttpActionResult> Post([FromBody]CourseViewModel courseViewModel)
         {
-            var course = await GetCourseByCourseViewModel(courseViewModel);
+           try
+            {
+                var course = await GetCourseByCourseViewModel(courseViewModel);
 
-            await _courseRepository.CreateAsync(course);
+                await _courseRepository.CreateAsync(course);
 
-            return Ok();
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex);
+                return InternalServerError();
+            }
         }
 
         private async Task<Course> GetCourseByCourseViewModel(CourseViewModel courseViewModel)
