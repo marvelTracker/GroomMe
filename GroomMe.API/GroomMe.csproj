@@ -305,6 +305,14 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\favicon.ico" />
+    <Content Include="Content\images\home-office-336377_1920.jpg" />
+    <Content Include="Content\images\home-office-336378_1920.jpg" />
+    <Content Include="Content\images\laptop-1205256_1920.jpg" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\startup-593327_1920.jpg" />
+    <Content Include="Content\images\subtle_dots.png" />
+    <Content Include="Content\landing-page.css" />
     <Content Include="Content\ng-tags-input.bootstrap.min.css" />
     <Content Include="Content\ng-tags-input.min.css" />
     <Content Include="Content\ngPercentDisplay.css" />
