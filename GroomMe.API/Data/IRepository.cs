@@ -18,7 +18,7 @@ namespace Web.API.Kata.Data
 
         void Delete(T entity);
 
-        Task<IList<T>> GetAllAsync();
+        Task<IList<T>> GetAllAsync(string userId);
 
         Task CreateAsync(T entity);
 

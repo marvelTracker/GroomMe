@@ -6,6 +6,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using System.Web;
+using Microsoft.AspNet.Identity.EntityFramework;
 using MVC.Kata.Data;
 
 namespace Web.API.Kata.Data
@@ -58,11 +59,11 @@ namespace Web.API.Kata.Data
             }
         }
 
-        public override async Task<IList<Course>> GetAllAsync()
+        public override async Task<IList<Course>> GetAllAsync(string userId)
         {
             using (StoreDataContext dbContext = new StoreDataContext())
             {
-                var results = await dbContext.Courses.Include("Tags").ToListAsync();
+                var results = await dbContext.Courses.Include("Tags").Where(s=>s.UserId == userId).ToListAsync();
                 return results;
             }
 

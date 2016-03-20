@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Security.Principal;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using System.Web.Mvc;
 using log4net;
+using Microsoft.AspNet.Identity;
 using MVC.Kata.Data;
 using MVC.Kata.Models;
 using Newtonsoft.Json;
@@ -38,7 +40,9 @@ namespace Web.API.Kata.Controllers
         {
             try
             {
-                var results = await GetViewModels();
+                var userId = User.Identity.GetUserId();
+
+                var results = await GetViewModels(userId);
 
                 return Ok(results);
             }
@@ -52,9 +56,17 @@ namespace Web.API.Kata.Controllers
         // GET api/coursedata/5
         public async Task<IHttpActionResult> Get(int id)
         {
-            var result = await GetViewModel(id);
+            try
+            {
+                var result = await GetViewModel(id);
 
-            return Ok(result);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex);
+                return InternalServerError();
+            }
         }
 
         private async Task<CourseViewModel> GetViewModel(int id)
@@ -70,8 +82,12 @@ namespace Web.API.Kata.Controllers
         public async Task<IHttpActionResult> Post([FromBody]CourseViewModel courseViewModel)
         {
            try
-            {
+           {
+                var userId = User.Identity.GetUserId();
+
                 var course = await GetCourseByCourseViewModel(courseViewModel);
+
+                course.UserId = userId;
 
                 await _courseRepository.CreateAsync(course);
 
@@ -162,10 +178,10 @@ namespace Web.API.Kata.Controllers
         {
         }
 
-        private async Task<IList<CourseViewModel>> GetViewModels()
+        private async Task<IList<CourseViewModel>> GetViewModels(string userId)
         {
 
-            var result = await _courseRepository.GetAllAsync();
+            var result = await _courseRepository.GetAllAsync(userId);
             var returnList = new List<CourseViewModel>();
 
             foreach (var course in result)

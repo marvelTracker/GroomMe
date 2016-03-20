@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using System.Web.UI;
 
 // ReSharper disable once CheckNamespace
 namespace MVC.Kata.Data
@@ -52,6 +53,7 @@ namespace MVC.Kata.Data
         public DateTime ModifyDateTime { get; set; }
         public DateTime CreatedDateTime { get; set; }
         public string Description { get; set; }
+        public string UserId { get; set; }
     }
 
     public class Tag : IModifiedEntity

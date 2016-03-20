@@ -57,7 +57,7 @@ namespace Web.API.Kata.Data
             throw new NotImplementedException();
         }
 
-        public virtual async Task<IList<T>> GetAllAsync()
+        public virtual async Task<IList<T>> GetAllAsync(string userId)
         {
             using (StoreDataContext dataContext = new StoreDataContext())
             {
