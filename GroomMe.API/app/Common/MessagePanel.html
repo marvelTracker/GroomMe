@@ -1,0 +1,9 @@
+﻿<div class="alert alert-success" role="alert" ng-show="isSuccess" ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}">
+    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> {{message}}
+</div>
+<div class="alert alert-danger" role="alert" ng-show="isError" ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+    <span class="sr-only">Error:</span> {{message}}
+    
+</div>
+<div class="alert alert-info" role="alert" ng-show="isCustom" ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}">{{message}}</div>

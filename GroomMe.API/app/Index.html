@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+
+<html ng-app="mainModule">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Course</title>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="../Content/themes/base/all.css" rel="stylesheet" />
+    <link href="../Content/app.css" rel="stylesheet" />
+    <link href="../Content/ngPercentDisplay.css" rel="stylesheet" />
+    <!--<link href="../Content/ng-tags-input.bootstrap.min.css" rel="stylesheet" />-->
+    <link href="../Content/ng-tags-input.min.css" rel="stylesheet" />
+
+    <script src="../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../Scripts/jquery-ui-1.11.4.min.js"></script>
+    <script src="../Scripts/bootstrap.js"></script>
+   
+    <script src="../Scripts/angular.min.js"></script>
+    <script src="../Scripts/angular-route.js"></script>
+    <script src="../Scripts/angular-animate.min.js"></script>
+    <script src="../Scripts/angular-ui/ui-bootstrap.min.js"></script>
+    <script src="../Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+    <script src="../Scripts/underscore-min.js"></script>
+    <script src="../Scripts/moment.min.js"></script>
+    <script src="../Scripts/moment-with-locales.min.js"></script>
+    <script src="../Scripts/ng-tags-input.min.js"></script>
+
+    <script src="app.js"></script>
+    <script src="mainController.js"></script>
+    <script src="Course/CourseViewPanelDirective.js"></script>
+    <script src="Course/courseDataService.js"></script>
+    <script src="Course/courseController.js"></script>
+    <script src="User/UserManagmentDirective.js"></script>
+    <script src="User/userDataService.js"></script>
+    <script src="User/userController.js"></script>
+    <script src="Common/MessagePanelService.js"></script>
+    <script src="Common/DateTimePickerDirective.js"></script>
+    <script src="Common/MessagePanelDirective.js"></script>
+    <script src="External/ngPercentDisplay.js"></script>
+    <script src="Course/courseFilterService.js"></script>
+    <script src="Course/CourseFilter.js"></script>
+    <script src="Tag/TagController.js"></script>
+    <script src="Common/SliderDirective.js"></script>
+</head>
+<body ng-controller="mainController">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Groom Me</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="#/main" class="hidden"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Dashboard</a></li>
+                <li><a href="#/viewcourse:view"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> View Resource</a></li>
+                <li><a href="#/addcourse:add"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Resource</a></li> 
+                <!--<li><a href="#/viewtag:view">View Tags</a></li>    
+                <li><a href="#/addtag:add">Add Tags</a></li>-->                   
+            </ul>
+            <user-nav-bar></user-nav-bar>
+</div><!-- /.container-fluid -->
+    </nav>
+    <div>
+        <div class="container">
+            <div class="row">
+                <message-panel></message-panel>
+            </div>
+            
+            <div ng-view></div>
+        </div>
+    </div>
+</body>
+</html>

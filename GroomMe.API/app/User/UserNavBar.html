@@ -1,0 +1,13 @@
+﻿<div ng-show="!profile.isLoggedIn">
+    <div class="nav navbar-nav navbar-right">
+        <button type="button" class="btn btn-default navbar-btn btn-success" ng-click="register()">Register</button>
+        <button type="button" class="btn btn-default navbar-btn btn-info" ng-click="logIn()">Log in</button>
+</div>
+</div>
+<div ng-show="profile.isLoggedIn">
+    <div class="nav navbar-nav navbar-right">
+        
+      <span><span class="glyphicon glyphicon-user glyphicon-color" aria-hidden="true"></span> {{profile.userName}}</span>
+        <button type="button" class="btn btn-default navbar-btn btn-danger" ng-click="logOut()">Log Out</button>
+    </div>
+</div>
