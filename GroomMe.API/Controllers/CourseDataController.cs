@@ -102,7 +102,12 @@ namespace Web.API.Kata.Controllers
                 CourseId = courseViewModel.CourseId
             };
 
+            if (courseViewModel.Tags == "undefined")
+                return course;
+
             var tags = JsonConvert.DeserializeObject<TagViewModel[]>(courseViewModel.Tags);
+
+
 
             foreach (TagViewModel tagViewModel in tags)
             {
@@ -130,11 +135,20 @@ namespace Web.API.Kata.Controllers
         // PUT api/coursedata/5
         public async Task<IHttpActionResult> Put(int id, [FromBody]CourseViewModel courseViewModel)
         {
-            var course = await GetCourseByCourseViewModel(courseViewModel);
+            try
+            {
+                var course = await GetCourseByCourseViewModel(courseViewModel);
 
-            await _courseRepository.UpdateAsync(course);
+                await _courseRepository.UpdateAsync(course);
 
-            return Ok();
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex);
+                return InternalServerError();
+            }
+           
         }
 
         //This is for partial update.
