@@ -153,6 +153,7 @@ namespace Web.API.Kata.Controllers
         {
             try
             {
+                //Test
                 var course = await GetCourseByCourseViewModel(courseViewModel);
 
                 await _courseRepository.UpdateAsync(course);
