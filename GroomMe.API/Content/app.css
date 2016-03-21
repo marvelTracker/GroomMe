@@ -3,7 +3,7 @@
     font: normal 12px 'Open Sans', arial, sans-serif;
   line-height: 18px;
   color: #333333;
-  background: url(../content/images/subtle_dots.png);
+  /*background: url(../content/images/subtle_dots.png);*/
 }
 
 .form-group .help-block {

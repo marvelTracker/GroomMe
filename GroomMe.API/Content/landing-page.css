@@ -90,10 +90,6 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    width: 150%;
-    margin-left: -150px;
-    margin-top: -30px;
-    margin-right: -150px;
 }
 
     .banner h2 {
