@@ -1,8 +1,8 @@
 ﻿(function () {
     var app = angular.module("mainModule");
 
-    //var baseUrl = "http://groomme.apphb.com";
-    var baseUrl = "http://localhost:54052";
+    var baseUrl = "http://groomme.apphb.com";
+    //var baseUrl = "http://localhost:54052";
 
     var userDataService = function ($http) {
 
