@@ -1,6 +1,6 @@
 ﻿<div class="container">
     <div class="row">
-        <div class="col-lg-3 col-lg-pull-1">
+        <div class="col-lg-3 col-lg-pull-1 col-sm-4 hidden-xs">
             <div class="panel-group" id="accordion">
                 <div class="panel panel-success" id="panel1">
                     <div class="panel-heading">
@@ -122,7 +122,129 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-9">
+        <div class="visible-xs">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-success" id="xspanel1">
+                    <div class="panel-heading">
+                        <h6 class="panel-title clearfix">
+                            <a data-toggle="collapse" data-target="#xsfilterPanel1" class="collapsed">
+                                Filters <button type="submit" class="btn btn-warning btn-xs" ng-click="clearFilter()">Clear</button>
+                            </a>
+                        </h6>
+                    </div>
+                    <div id="xsfilterPanel1" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <div class="panel-group" id="accordion">
+                                <div class="panel panel-success" id="xspanel2">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-target="#xsstatusFilter">
+                                                Status
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="xsstatusFilter" class="panel-collapse collapse in">
+                                        <div class="panel-body">
+                                            <div class="form-group">
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox" ng-model="checkboxModel.newCourse.selected" ng-change="filterStatus(checkboxModel.newCourse)"><span class="label label-danger">New</span></label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox" ng-model="checkboxModel.todoCourse.selected" ng-change="filterStatus(checkboxModel.todoCourse)"><span class="label label-info">To do</span></label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox" ng-model="checkboxModel.inprogressCourse.selected" ng-change="filterStatus(checkboxModel.inprogressCourse)"><span class="label label-warning">In Progress</span></label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox" ng-model="checkboxModel.doneCourse.selected" ng-change="filterStatus(checkboxModel.doneCourse)"><span class="label label-success">Done</span></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-group" id="accordion">
+                                <div class="panel panel-success" id="xspanel3">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-target="#xstagFilter">
+                                                Tags
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="xstagFilter" class="panel-collapse collapse in">
+                                        <div class="panel-body">
+                                            <div class="form-horizontal">
+                                                <div class="form-group-sm">
+                                                    <tags-input class="bootstrap" ng-model="filterTags.tags" replace-spaces-with-dashes="true"></tags-input>
+                                                </div>
+
+                                                <div class="form-group-sm">
+                                                    <button type="submit" class="btn btn-success" ng-click="filterByTags()">GO</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-group" id="accordion">
+                                <div class="panel panel-success" id="xspanel4">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-target="#xsdateFilter" class="collapsed">
+                                                Dates
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="xsdateFilter" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <div class="form-horizontal">
+                                                <div class="form-group-sm">
+                                                    <label><small>Start Date</small></label>
+                                                    <date-time-picker required="false" callback="setFilterStartDate(data)" small="true"></date-time-picker>
+                                                </div>
+                                                <div class="form-group-sm">
+                                                    <label><small>End Date</small></label>
+                                                    <date-time-picker required="false" callback="setFilterEndDate(data)" small="true"></date-time-picker>
+                                                </div>
+                                                <div class="form-group-sm">
+                                                    <button type="submit" class="btn btn-success" ng-click="filterByDate()">GO</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-group" id="accordion">
+                                <div class="panel panel-success" id="xspanel5">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-target="#xscompletionFilter" class="collapsed">
+                                                Completion <span class="badge">{{filterPrecentage}}</span>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="xscompletionFilter" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <div class="form-horizontal">
+                                                <div class="form-group-sm cdbl-slider" my-slider config="filterSliderConfig" model="filterPrecentage">
+
+                                                </div>
+                                                <div class="form-group-sm">
+                                                    <button type="submit" class="btn btn-success" ng-click="filterByPrecentage()">GO</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9 col-sm-8">
             <div class="alert alert-info col-lg-12 col-lg-pull-1" role="alert"><span class="glyphicon glyphicon-list pull-left"></span> Resources: {{filterCourse.totalItems}}</div>
 
             <div ng-repeat="course in courses|courseFilter:filterCourse">
