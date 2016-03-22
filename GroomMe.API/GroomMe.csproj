@@ -270,6 +270,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
+    <Content Include="app\Common\DateFilter.js" />
     <Content Include="app\Common\DateTimePicker.html" />
     <Content Include="app\Common\DateTimePickerDirective.js" />
     <Content Include="app\Common\MessagePanel.html" />

@@ -58,7 +58,7 @@
                     if (newValue !== undefined && moment(newValue).isValid()) {
                         var year = moment(newValue).year();
                         var month = moment(newValue).month();
-                        var day = moment(newValue).day();
+                        var day = moment(newValue).date();
 
                         $scope.setDate(year,month,day);
                     }
