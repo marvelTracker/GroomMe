@@ -2,7 +2,7 @@
 
     var app = angular.module("mainModule");
 
-    var courseController = function ($scope, $http, $log, courseDataService, messagePanelService, $routeParams, $injector) {
+    var courseController = function ($scope, $http, $log, courseDataService, messagePanelService, $routeParams, $injector, usSpinnerService) {
 
         $scope.course = '';
         $scope.course.startDate = new Date();
@@ -53,6 +53,14 @@
             $scope.filterDates.endDate = date;
         };
 
+        $scope.startSpin = function() {
+            usSpinnerService.spin('spinner-1');
+        };
+
+        $scope.stopSpin = function() {
+            usSpinnerService.stop('spinner-1');
+        };
+
         var initializeFilter = function () {
             $scope.filterCourse = {};
             $scope.filterCourse.isNofilter = true;
@@ -101,6 +109,7 @@
         };
 
         var onGetCourseDataLoad = function (data) {
+            $scope.stopSpin();
             $scope.courses = data;
         };
 
@@ -124,7 +133,9 @@
         };
 
         $scope.getData = function () {
+            $scope.startSpin();
             courseDataService.GetCourseData().then(onGetCourseDataLoad, function (error) {
+                $scope.stopSpin();
                 messagePanelService.SendErrorMessage();
             });
         };
@@ -145,12 +156,16 @@
             if (!$scope.addCourseForm.$valid)
                 console.log('Fix the issue in ');
             else {
+                $scope.startSpin();
+
                 courseDataService.SaveNewCourse($scope.course).then(function (data) {
                     $log.info('Course data ' + data);
+                    $scope.stopSpin();
                     messagePanelService.SendSuccessMessage();
 
                 }, function (error) {
                     $log.info('error ' + error);
+                    $scope.stopSpin();
                     messagePanelService.SendErrorMessage();
                 });
             }
@@ -160,10 +175,13 @@
             if (!$scope.editCourseForm.$valid)
                 console.log('Fix the issue in ');
             else {
+                $scope.startSpin();
                 courseDataService.EditCourse($scope.editCourse).then(function (data) {
+                    $scope.stopSpin();
                     messagePanelService.SendSuccessMessage();
 
                 }, function (error) {
+                    $scope.stopSpin();
                     messagePanelService.SendErrorMessage();
                 });
             }

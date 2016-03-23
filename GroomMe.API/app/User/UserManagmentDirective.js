@@ -9,7 +9,7 @@
                 isRegisterForm: "@register"
             },
 
-            controller: function ($scope, $log, $location, userDataService) {
+            controller: function ($scope, $log, $location, userDataService, usSpinnerService, messagePanelService) {
                 $scope.user = '';
                 $scope.user.UserName = '';
                 $scope.user.Email = '';
@@ -22,10 +22,20 @@
                 $scope.registerForm = false;
                 $scope.user.isRemember = false;
 
+                $scope.startSpin = function () {
+                    usSpinnerService.spin('spinner-1');
+                };
+
+                $scope.stopSpin = function () {
+                    usSpinnerService.stop('spinner-1');
+                };
+
                 $scope.registerForm = ($scope.isRegisterForm === "true");
 
                 var onUserDataLoad = function (data) {
                     $log.info('User data ' + data);
+
+                    $scope.stopSpin();
 
                     $scope.token = data.access_token;
 
@@ -39,12 +49,14 @@
 
                 var onRegisterDataLoad = function (data) {
                     $log.info('User data ' + data);
-
+                    $scope.stopSpin();
                     $scope.Login();
 
                 };
 
                 var onError = function (reason) {
+                    $scope.stopSpin();
+                    messagePanelService.SendErrorMessage();
                     if (response.data.exceptionMessage)
                         $scope.message += response.data.exceptionMessage;
 
@@ -56,14 +68,17 @@
                     }
 
                     $log.error('Failed Error ' + $scope.message);
+                    
 
                 };
 
                 $scope.Login = function () {
+                    $scope.startSpin();
                     userDataService.UserLogin($scope.user).then(onUserDataLoad, onError);
                 };
 
                 $scope.Register = function () {
+                    $scope.startSpin();
                     userDataService.RegisterUser($scope.user).then(onRegisterDataLoad, onError);
                 };
             }
