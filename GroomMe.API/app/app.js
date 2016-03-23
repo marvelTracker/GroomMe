@@ -3,7 +3,7 @@
     
     app.config(['$routeProvider', '$httpProvider', 'usSpinnerConfigProvider', function ($routeProvider, $httpProvider, usSpinnerConfigProvider) {
 
-        usSpinnerConfigProvider.setDefaults({ color: 'blue', lines:9, length:8, radius:4 });
+        usSpinnerConfigProvider.setDefaults({ color: 'Blue', lines: 9, length: 8, radius: 4 });
 
              $routeProvider.when("/", {
             templateUrl :"Dashboard.html",
