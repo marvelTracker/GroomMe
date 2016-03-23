@@ -1,7 +1,9 @@
 ﻿(function () {
-    var app = angular.module("mainModule", ["ngRoute", "ui.bootstrap", 'ngTagsInput']);
+    var app = angular.module("mainModule", ['ngAnimate', "ngRoute", "ui.bootstrap", 'ngTagsInput', 'angularSpinner', 'treasure-overlay-spinner']);
+    
+    app.config(['$routeProvider', '$httpProvider', 'usSpinnerConfigProvider', function ($routeProvider, $httpProvider, usSpinnerConfigProvider) {
 
-    app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpProvider) {
+        usSpinnerConfigProvider.setDefaults({ color: 'blue', lines:9, length:8, radius:4 });
 
              $routeProvider.when("/", {
             templateUrl :"Dashboard.html",
@@ -32,5 +34,6 @@
                 controller: "TagController"
             }).otherwise({ redirectTo: "/" });
  }]);
+
    
 })();

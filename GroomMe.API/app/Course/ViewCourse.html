@@ -246,10 +246,11 @@
         </div>
         <div class="col-lg-9 col-sm-8">
             <div class="alert alert-info col-lg-12 col-lg-pull-1" role="alert"><span class="glyphicon glyphicon-list pull-left"></span> Resources: {{filterCourse.totalItems}}</div>
-
             <div ng-repeat="course in courses|courseFilter:filterCourse">
                 <div class="col-lg-6 col-lg-pull-1">
-                    <courseview-info-panel course="course"></courseview-info-panel>
+                    <courseview-info-panel course="course">
+                       
+                    </courseview-info-panel>
                 </div>
             </div>
         </div>
