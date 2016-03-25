@@ -133,8 +133,10 @@
         }
 }
 
-footer {
+.footer {
   background-color: #FBB040;
+  position: relative;
+  clear:both;
 }
 
 p.copyright {
@@ -142,4 +144,46 @@ p.copyright {
     text-align: center;
 }
 
+ .carousel-caption-textpattern1 {
+    right: 50%;
+    left: 20%;
+    padding-bottom: 30px;
+    color: navy;
+      bottom: 450px;
+  }
+
+  .carousel-caption h3 {
+      font-size: 35px;
+  }
+
+
+ .carousel-caption-textpattern2 {
+     right: 50%;
+    left: 20%;
+    padding-bottom: 30px;
+    bottom: 500px;
+     color: navy;
+ }
+
+  .carousel-caption-textpattern3 {
+    padding-bottom: 30px;
+    bottom: 500px;
+     color: navy;
+ }
+  .carousel-caption-textpattern4 {
+    padding-bottom: 30px;
+     color: navy;
+ }
+  
+  .carousel-caption p {
+      font-size: 20px;
+      color: cadetblue;
+  }
+
+  .carousel-inner > .item > img,
+    .carousel-inner > .item > a > img {
+        width: 100%;
+        margin: auto;
+        height: 30%;
+    }
 

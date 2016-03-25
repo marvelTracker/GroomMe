@@ -1,11 +1,4 @@
-﻿<style>
-    .carousel-inner > .item > img,
-    .carousel-inner > .item > a > img {
-        width: 100%;
-        margin: auto;
-        height: 50%;
-    }
-</style>
+﻿
 
 <div id="myCarousel" class="carousel" data-ride="carousel">
     <!-- Indicators -->
@@ -19,30 +12,30 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
         <div class="item active">
-            <img class="img-responsive" src="../Content/images/code-1076533_1920.jpg"/>
-            <div class="carousel-caption">
-                <h3 class="">Managing Your Career</h3>
+            <img class="img-responsive" src="../Content/images/technology-792180_1920.jpg" />
+            <div class="carousel-caption carousel-caption-textpattern1">
+                <h3>Managing Your Career</h3>
                 <p>Making the Best of Now, While Planning for Your Future.</p>
             </div>
         </div>
 
         <div class="item">
             <img class="img-responsive" src="../Content/images/tablet-690032_1280.jpg"/>
-            <div class="carousel-caption">
+            <div class="carousel-caption carousel-caption-textpattern2">
                 <h3>Finding Career Direction</h3>
                 <p>Discover Yourself and Your Career Purpose</p>
             </div>
         </div>
         <div class="item">
             <img class="img-responsive" src="../Content/images/home-office-336378_1920.jpg">
-            <div class="carousel-caption">
+            <div class="carousel-caption carousel-caption-textpattern3">
                 <h3>Taking Control of Your Career</h3>
                 <p>Personal Inventories</p>
             </div>
         </div>
         <div class="item">
-            <img class="img-responsive" src="../Content/images/home-office-336378_1920.jpg">
-            <div class="carousel-caption">
+            <img class="img-responsive" src="../Content/images/man-791049_1920.jpg">
+            <div class="carousel-caption  carousel-caption-textpattern4">
                 <h3>Developing a Career Strategy</h3>
                 <p>Developing a career strategy is like constructing a building. You have to start with a solid foundation and  build step by step. Groom Me helps to manage your career development strategy.</p>
             </div>
@@ -124,5 +117,11 @@
         jQuery(document).ready(function ($) {
             // declare object for video
             var player = new MediaElementPlayer('#player1');
+            
+            $('.carousel-caption-textpattern1 p').textillate({
+                in: { effect: 'splat' },
+                out: { effect: 'foldUnfold', sync: true },
+                loop: true
+            });
         });
     </script>

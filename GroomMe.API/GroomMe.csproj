@@ -301,6 +301,7 @@
     <Content Include="app\User\UserNavBar.html" />
     <Content Include="app\User\UserRegister.html" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\animate.css" />
     <Content Include="Content\app.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -314,9 +315,12 @@
     <Content Include="Content\images\laptop-1205256_1920.jpg" />
     <Content Include="Content\images\logo.png" />
     <Content Include="Content\images\Logo1.png" />
+    <Content Include="Content\images\man-791049_1920.jpg" />
+    <Content Include="Content\images\shops-1026420_1920.jpg" />
     <Content Include="Content\images\startup-593327_1920.jpg" />
     <Content Include="Content\images\subtle_dots.png" />
     <Content Include="Content\images\tablet-690032_1280.jpg" />
+    <Content Include="Content\images\technology-792180_1920.jpg" />
     <Content Include="Content\landing-page.css" />
     <Content Include="Content\mediaelementplayer.css" />
     <Content Include="Content\navbar-styles.css" />
@@ -410,6 +414,9 @@
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery-ui-1.11.4.js" />
     <Content Include="Scripts\jquery-ui-1.11.4.min.js" />
+    <Content Include="Scripts\jquery.fittext.js" />
+    <Content Include="Scripts\jquery.lettering.js" />
+    <Content Include="Scripts\jquery.textillate.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
