@@ -164,3 +164,96 @@
 @media screen and (max-width: 768px) {
   .fh5co-nav-toggle {
     display: block; } }
+.fh5co-section-lead {
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 22px; }
+
+.fh5co-section-sub-lead {
+  font-size: 22px;
+  font-family: "Roboto", arial, sans-serif;
+  font-weight: 100;
+  line-height: 32px; }
+
+@media screen and (max-width: 768px) {
+  .fh5co-feature .fh5co-feature-text {
+    width: 70%; } }
+#fh5co-features {
+  padding: 5em 0;
+  background: rgba(0, 0, 0, 0.02); }
+
+.fh5co-feature-border {
+  border-right: 1px solid #e9e9e9; }
+
+.fh5co-feature {
+  float: left;
+  width: 100%;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e9e9e9; }
+.fh5co-feature.no-border {
+  border-bottom: none; }
+@media screen and (max-width: 768px) {
+  .fh5co-feature.no-border {
+    border-bottom: 1px solid #e9e9e9; } }
+.fh5co-feature .fh5co-feature-icon, .fh5co-feature .fh5co-feature-text {
+  float: left; }
+.fh5co-feature .fh5co-feature-icon {
+  margin-right: 30px; }
+@media screen and (max-width: 768px) {
+  .fh5co-feature .fh5co-feature-icon {
+    margin-right: 10px;
+    margin-top: 10px; } }
+.fh5co-feature .fh5co-feature-icon i {
+  font-size: 100px;
+  color: #FBB040; }
+@media screen and (max-width: 768px) {
+  .fh5co-feature .fh5co-feature-icon i {
+    font-size: 50px;
+    margin-top: 10px; } }
+.fh5co-feature .fh5co-feature-text {
+  width: 50%; }
+@media screen and (max-width: 768px) {
+  .fh5co-feature .fh5co-feature-text {
+    width: 70%; } }
+
+.fh5co-spacer {
+  clear: both;
+  position: relative;
+  border: none;
+  padding: 0;
+  margin: 0; }
+
+.fh5co-spacer-xlg {
+  height: 150px; }
+@media screen and (max-width: 768px) {
+  .fh5co-spacer-xlg {
+    height: 70px; } }
+
+.fh5co-spacer-lg {
+  height: 100px; }
+@media screen and (max-width: 768px) {
+  .fh5co-spacer-lg {
+    height: 50px; } }
+
+.fh5co-spacer-md {
+  height: 80px; }
+@media screen and (max-width: 768px) {
+  .fh5co-spacer-md {
+    height: 30px; } }
+
+.fh5co-spacer-sm {
+  height: 50px; }
+@media screen and (max-width: 768px) {
+  .fh5co-spacer-sm {
+    height: 20px; } }
+
+.fh5co-spacer-xs {
+  height: 30px; }
+@media screen and (max-width: 768px) {
+  .fh5co-spacer-xs {
+    height: 20px; } }
+
+.fh5co-spacer-xxs {
+  height: 20px; }

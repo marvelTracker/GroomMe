@@ -138,39 +138,70 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-<div class="content-section-a">
+<div id="fh5co-main">
+    <!-- Features -->
+<div id="fh5co-features">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-5 col-sm-6">
-                <hr class="section-heading-spacer">
-                <div class="clearfix"></div>
-                <h2 class="section-heading"><br></h2>
-                <p class="lead">A special thanks to <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a> for providing the photographs that you see in this template. Visit their website to become a member.</p>
+        <div class="row text-center">
+            <div class="col-md-8 col-md-offset-2">
+                <h1 class="fh5co-section-lead">Key Features</h1>
             </div>
-            <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                <img class="img-responsive" src="../Content/images/code-1076533_1920.jpg" />
+            <div class="col-md-8 col-md-offset-3">
+                <video width="500" height="300" id="player1" preload="none">
+                    <source type="video/youtube" src="https://www.youtube.com/watch?v=RPAj2LR95Oo" />
+                </video>
+            </div>
+            <div class="fh5co-spacer fh5co-spacer-md"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-6 fh5co-feature-border">
+                <div class="fh5co-feature">
+                    <div class="fh5co-feature-icon">
+                        <i class="icon-clipboard2"></i>
+                    </div>
+                    <div class="fh5co-feature-text">
+                        <h3>Plan New Skills</h3>
+                        <p>You can plan new skills via resources.A resource could be anything like online courses, videos, blogs, etc.Groom Me helps to manage your resources.</p>
+                    </div>
+                </div>
+                <div class="fh5co-feature no-border">
+                    <div class="fh5co-feature-icon">
+                        <i class="icon-list"></i>
+                    </div>
+                    <div class="fh5co-feature-text">
+                        <h3>Track Skills</h3>
+                        <p>Users can track their resources by using charts, graphs, etc</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <div class="fh5co-feature no-border">
+                    <div class="fh5co-feature-icon">
+                        <i class="icon-mobile"></i>
+                    </div>
+                    <div class="fh5co-feature-text">
+                        <h3>Responsive UI</h3>
+                        <p>Mobile friendly UI enhances the UX experience.You can use Groom Me anywhere from any device.</p>
+                    </div>
+                </div>
+                <div class="fh5co-feature">
+                    <div class="fh5co-feature-icon">
+                        <i class="icon-mail"></i>
+                    </div>
+                    <div class="fh5co-feature-text">
+                        <h3>Due Notifications</h3>
+                        <p>Friendly reminders will send to users to track their due resources</p>
+                    </div>
+                </div>
+               
             </div>
         </div>
     </div>
 </div>
-
-<div class="content-section-b">
-
-    <div class="container">
-
-        <div class="row">
-            <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
-                <hr class="section-heading-spacer">
-                <div class="clearfix"></div>
-                <h2 class="section-heading">3D Device Mockups<br>by PSDCovers</h2>
-                <p class="lead">Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by <a target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of their awesome, free photoshop actions!</p>
-            </div>
-            <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                <img class="img-responsive" src="../Content/images/home-office-336378_1920.jpg">
-            </div>
-        </div>
-
     </div>
-
-
-</div>
+    <script>
+        jQuery(document).ready(function ($) {
+            // declare object for video
+            var player = new MediaElementPlayer('#player1');
+        });
+    </script>

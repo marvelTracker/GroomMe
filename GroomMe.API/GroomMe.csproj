@@ -306,6 +306,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\icomoon.css" />
     <Content Include="Content\images\code-1076533_1920.jpg" />
     <Content Include="Content\images\favicon.ico" />
     <Content Include="Content\images\home-office-336377_1920.jpg" />
@@ -317,6 +318,7 @@
     <Content Include="Content\images\subtle_dots.png" />
     <Content Include="Content\images\tablet-690032_1280.jpg" />
     <Content Include="Content\landing-page.css" />
+    <Content Include="Content\mediaelementplayer.css" />
     <Content Include="Content\navbar-styles.css" />
     <Content Include="Content\ng-tags-input.bootstrap.min.css" />
     <Content Include="Content\ng-tags-input.min.css" />
@@ -358,6 +360,7 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\icomoon\icomoon.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
@@ -394,6 +397,9 @@
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Scripts\angular-spinner.min.js.map" />
+    <Content Include="fonts\icomoon\icomoon.eot" />
+    <Content Include="fonts\icomoon\icomoon.ttf" />
+    <Content Include="fonts\icomoon\icomoon.woff" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -408,6 +414,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\mediaelement-and-player.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\moment-with-locales.js" />
     <Content Include="Scripts\moment-with-locales.min.js" />
