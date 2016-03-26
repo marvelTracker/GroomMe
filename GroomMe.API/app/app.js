@@ -1,5 +1,5 @@
 ﻿(function () {
-    var app = angular.module("mainModule", ['ngAnimate', "ngRoute", "ui.bootstrap", 'ngTagsInput', 'angularSpinner']);
+    var app = angular.module("mainModule", ['ngAnimate', "ngRoute", "ui.bootstrap", 'ngTagsInput', 'angularSpinner','gmd.dial']);
     
     app.config(['$routeProvider', '$httpProvider', 'usSpinnerConfigProvider', function ($routeProvider, $httpProvider, usSpinnerConfigProvider) {
 

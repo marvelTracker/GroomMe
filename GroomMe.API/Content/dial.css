@@ -1,0 +1,39 @@
+body {
+  font-family: Arial;
+}
+
+.plot svg {
+    background: #ccc;
+    /*width: 200px;
+    height: 300px;*/
+    /*margin: 5px;*/
+}
+
+ svg .valueArc {
+    fill: #6082b6;
+    fill-opacity: 0.5
+}
+
+ svg .changeArc {
+    fill: black;
+    fill-opacity: 0.2
+}
+
+ svg .interactArc {
+    fill: #BEC6CD;
+    fill-opacity: 0.1;
+    /*width: 200px;
+    height: 200px;*/
+}
+
+svg .text {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+gmd-dial svg {
+    width: 250px;
+    height: 250px;
+    padding-left: 20px;
+    padding-right: 20px;
+}

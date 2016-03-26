@@ -85,8 +85,8 @@
  .blue-slider .ui-slider-handle { border-color: #729fcf; }
 
  .fixed-panel {
-  min-height: 280px;
-  max-height: 280px;
+  min-height: 480px;
+  max-height: 480px;
   overflow-y: auto;
 }
 

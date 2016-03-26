@@ -17,12 +17,11 @@
         <link href="../Content/ng-tags-input.min.css" rel="stylesheet" />
         <link href="../Content/icomoon.css" rel="stylesheet" />
         <link href="../Content/animate.css" rel="stylesheet" />
-       
-        <script src="../Scripts/jquery-1.10.2.min.js"></script>
-     
+        <link href="../Content/dial.css" rel="stylesheet" />
+
+        <script src="../Scripts/jquery-2.2.1.js"></script>
         <script src="../Scripts/jquery-ui-1.11.4.min.js"></script>
         <script src="../Scripts/bootstrap.js"></script>
-   
         <script src="../Scripts/angular.min.js"></script>
         <script src="../Scripts/angular-route.js"></script>
         <script src="../Scripts/angular-animate.min.js"></script>
@@ -34,12 +33,12 @@
         <script src="../Scripts/moment.min.js"></script>
         <script src="../Scripts/moment-with-locales.min.js"></script>
         <script src="../Scripts/ng-tags-input.min.js"></script>
-
+        <script src="../Scripts/d3/d3.min.js"></script>
 
         <script src="../Scripts/jquery.fittext.js"></script>
         <script src="../Scripts/jquery.lettering.js"></script>
         <script src="../Scripts/jquery.textillate.js"></script>
-
+        <script src="../Scripts/dial.js"></script>
         <script src="../Scripts/mediaelement-and-player.min.js"></script>
        
         <script src="app.js"></script>
@@ -83,18 +82,9 @@
                         <a class="navbar-brand" href="#">Groom Me</a>
                     </div>
                     <div id="fh5co-navbar" class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="active"><a href="#/main"><span><span class="glyphicon glyphicon-home glyphicon-color" aria-hidden="true"></span> Home<span class="border"></span></span></a></li>
-                            <li><a href="#/viewcourse:view"><span><span class="glyphicon glyphicon-th-list glyphicon-color" aria-hidden="true"></span> View Resource <span class="border"></span></span></a></li>
-                            <li><a href="#/addcourse:add"><span><span class="glyphicon glyphicon-plus glyphicon-color" aria-hidden="true"></span> Add Resource <span class="border"></span></span></a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-th glyphicon-color" aria-hidden="true"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#"><span class="glyphicon glyphicon-cog glyphicon-color"></span> Settings</a></li>
-                                    <li><user-nav-bar></user-nav-bar></li>
-                                </ul>
-                            </li>
-                        </ul>
+                        <div id="fh5co-navbar" class="navbar-collapse collapse">
+                            <user-nav-bar></user-nav-bar>
+                        </div>
                     </div>
                 </div>
             </nav>
