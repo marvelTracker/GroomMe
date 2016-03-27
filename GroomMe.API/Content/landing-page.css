@@ -143,10 +143,12 @@
   background-color: #FBB040;
   position: relative;
   clear:both;
+  height: 40px;
+  padding-bottom:0;
 }
 
 p.copyright {
-    margin: 15px 15px 15px;
+    padding: 15px 15px 15px 15px;
     text-align: center;
 }
 
