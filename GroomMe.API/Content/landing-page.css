@@ -52,6 +52,9 @@
     .intro-divider {
         width: 100%;
     }
+     .content-padding {
+     padding-top: 10%;
+ }
 }
 
 .network-name {
@@ -131,6 +134,9 @@
         ul.banner-social-buttons > li:last-child {
             margin-bottom: 0;
         }
+    .content-padding {
+        padding-top: 15%;
+    }
 }
 
 .footer {
@@ -187,3 +193,8 @@ p.copyright {
         height: 30%;
     }
 
+@media(min-width:768px) {
+    .content-padding {
+        padding-top: 10%;
+    }
+}

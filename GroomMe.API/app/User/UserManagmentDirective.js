@@ -43,7 +43,7 @@
 
                     $log.info('Token :' + $scope.token);
 
-                    $location.path("/viewcourse");
+                    $location.path("/viewcourse:view");
 
                 };
 
