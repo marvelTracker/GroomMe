@@ -139,17 +139,8 @@
     }
 }
 
-.footer {
-  background-color: #FBB040;
-  position: relative;
-  clear:both;
-  height: 40px;
-  padding-bottom:0;
-}
-
 p.copyright {
-    padding: 15px 15px 15px 15px;
-    text-align: center;
+   text-align: center;
 }
 
  .carousel-caption-textpattern1 {
@@ -206,3 +197,26 @@ p.copyright {
         padding-top: 5%;
     }
 }
+
+html, body {
+  height: 100%;
+}
+
+#wrap {
+  min-height: 100%;
+}
+
+#main {
+  overflow:auto;
+  padding-bottom:150px; /* this needs to be bigger than footer height*/
+}
+
+.footer {
+  position: relative;
+  margin-top: -50px; /* negative value of footer height */
+  height: 50px;
+  clear:both;
+  padding-top:20px;
+    padding-bottom: 20px;
+   background-color: #FBB040;
+} 
