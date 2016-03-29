@@ -1,116 +1,114 @@
 ﻿<!DOCTYPE html>
 
 <html ng-app="mainModule">
-    <head>
-        <meta name="viewport" content="width=device-width" />
-        <link rel="shortcut icon" href="../Content/images/favicon.ico">
-        <title >Groom Me</title>
-       
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" href="../Content/images/favicon.ico">
+    <title>Groom Me</title>
 
-        <link href="../Content/mediaelementplayer.css" rel="stylesheet" />
-        <link href="../Content/bootstrap.min.css" rel="stylesheet" />
-        <link href="../Content/themes/base/all.css" rel="stylesheet" />
-        <link href="../Content/landing-page.css" rel="stylesheet" />
-        <link href="../Content/app.css" rel="stylesheet" />
-        <link href="../Content/ngPercentDisplay.css" rel="stylesheet" />
-        <link href="../Content/navbar-styles.css" rel="stylesheet" />
-        <link href="../Content/ng-tags-input.min.css" rel="stylesheet" />
-        <link href="../Content/icomoon.css" rel="stylesheet" />
-        <link href="../Content/animate.css" rel="stylesheet" />
-        <link href="../Content/dial.css" rel="stylesheet" />
 
-        <script src="../Scripts/jquery-2.2.1.js"></script>
-        <script src="../Scripts/jquery-ui-1.11.4.min.js"></script>
-        <script src="../Scripts/bootstrap.js"></script>
-        <script src="../Scripts/angular.min.js"></script>
-        <script src="../Scripts/angular-route.js"></script>
-        <script src="../Scripts/angular-animate.min.js"></script>
-        <script src="../Scripts/angular-ui/ui-bootstrap.min.js"></script>
-        <script src="../Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
-        <script src="../Scripts/spin.js"></script>
-        <script src="../Scripts/angular-spinner.min.js"></script>
-        <script src="../Scripts/underscore-min.js"></script>
-        <script src="../Scripts/moment.min.js"></script>
-        <script src="../Scripts/moment-with-locales.min.js"></script>
-        <script src="../Scripts/ng-tags-input.min.js"></script>
-        <script src="../Scripts/d3/d3.min.js"></script>
+    <link href="../Content/mediaelementplayer.css" rel="stylesheet" />
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/themes/base/all.css" rel="stylesheet" />
+    <link href="../Content/landing-page.css" rel="stylesheet" />
+    <link href="../Content/app.css" rel="stylesheet" />
+    <link href="../Content/ngPercentDisplay.css" rel="stylesheet" />
+    <link href="../Content/navbar-styles.css" rel="stylesheet" />
+    <link href="../Content/ng-tags-input.min.css" rel="stylesheet" />
+    <link href="../Content/icomoon.css" rel="stylesheet" />
+    <link href="../Content/animate.css" rel="stylesheet" />
+    <link href="../Content/dial.css" rel="stylesheet" />
 
-        <script src="../Scripts/jquery.fittext.js"></script>
-        <script src="../Scripts/jquery.lettering.js"></script>
-        <script src="../Scripts/jquery.textillate.js"></script>
-        <script src="../Scripts/dial.js"></script>
-        <script src="../Scripts/mediaelement-and-player.min.js"></script>
-       
-        <script src="app.js"></script>
-        <script src="mainController.js"></script>
-        <script src="Common/DateFilter.js"></script>
-        <script src="Course/CourseViewPanelDirective.js"></script>
-        <script src="Course/courseDataService.js"></script>
-        <script src="Course/courseController.js"></script>
-        <script src="User/UserManagmentDirective.js"></script>
-        <script src="User/userDataService.js"></script>
-        <script src="User/userController.js"></script>
-        <script src="Common/MessagePanelService.js"></script>
-        <script src="Common/DateTimePickerDirective.js"></script>
-        <script src="Common/MessagePanelDirective.js"></script>
-        <script src="External/ngPercentDisplay.js"></script>
-        <script src="Course/courseFilterService.js"></script>
-        <script src="Course/CourseFilter.js"></script>
-        <script src="Tag/TagController.js"></script>
-        <script src="Common/SliderDirective.js"></script>
-        <script>
-            jQuery(document).ready(function ($) {
-                $('body').on('click', '.js-fh5co-nav-toggle', function () {
-                    if ($('#fh5co-navbar').is(':visible')) {
-                        $(this).removeClass('active');
-                    } else {
-                        $(this).addClass('active');
-                    }
+    <script src="../Scripts/jquery-2.2.1.js"></script>
+    <script src="../Scripts/jquery-ui-1.11.4.min.js"></script>
+    <script src="../Scripts/bootstrap.js"></script>
+    <script src="../Scripts/angular.min.js"></script>
+    <script src="../Scripts/angular-route.js"></script>
+    <script src="../Scripts/angular-animate.min.js"></script>
+    <script src="../Scripts/angular-ui/ui-bootstrap.min.js"></script>
+    <script src="../Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+    <script src="../Scripts/spin.js"></script>
+    <script src="../Scripts/angular-spinner.min.js"></script>
+    <script src="../Scripts/underscore-min.js"></script>
+    <script src="../Scripts/moment.min.js"></script>
+    <script src="../Scripts/moment-with-locales.min.js"></script>
+    <script src="../Scripts/ng-tags-input.min.js"></script>
+    <script src="../Scripts/d3/d3.min.js"></script>
 
-                });
+    <script src="../Scripts/jquery.fittext.js"></script>
+    <script src="../Scripts/jquery.lettering.js"></script>
+    <script src="../Scripts/jquery.textillate.js"></script>
+    <script src="../Scripts/dial.js"></script>
+    <script src="../Scripts/mediaelement-and-player.min.js"></script>
+
+    <script src="app.js"></script>
+    <script src="mainController.js"></script>
+    <script src="Common/DateFilter.js"></script>
+    <script src="Course/CourseViewPanelDirective.js"></script>
+    <script src="Course/courseDataService.js"></script>
+    <script src="Course/courseController.js"></script>
+    <script src="User/UserManagmentDirective.js"></script>
+    <script src="User/userDataService.js"></script>
+    <script src="User/userController.js"></script>
+    <script src="Common/MessagePanelService.js"></script>
+    <script src="Common/DateTimePickerDirective.js"></script>
+    <script src="Common/MessagePanelDirective.js"></script>
+    <script src="External/ngPercentDisplay.js"></script>
+    <script src="Course/courseFilterService.js"></script>
+    <script src="Course/CourseFilter.js"></script>
+    <script src="Tag/TagController.js"></script>
+    <script src="Common/SliderDirective.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $('body').on('click', '.js-fh5co-nav-toggle', function () {
+                if ($('#fh5co-navbar').is(':visible')) {
+                    $(this).removeClass('active');
+                } else {
+                    $(this).addClass('active');
+                }
 
             });
-        </script>
-    </head>
-    <body ng-controller="mainController" >
-      <header id="fh5co-header" role="banner">
-            <nav class="navbar navbar-default" role="navigation">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <!-- Mobile Toggle Menu Button -->
-                        <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#fh5co-navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-                        <a class="navbar-brand" href="#">Groom Me</a>
-                    </div>
+
+        });
+    </script>
+</head>
+<body ng-controller="mainController">
+    <header id="fh5co-header" role="banner">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <!-- Mobile Toggle Menu Button -->
+                    <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#fh5co-navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+                    <a class="navbar-brand" href="#">Groom Me</a>
+                </div>
+                <div id="fh5co-navbar" class="navbar-collapse collapse">
                     <div id="fh5co-navbar" class="navbar-collapse collapse">
-                        <div id="fh5co-navbar" class="navbar-collapse collapse">
-                            <user-nav-bar></user-nav-bar>
-                        </div>
+                        <user-nav-bar></user-nav-bar>
                     </div>
                 </div>
-            </nav>
-        </header>
-        <div class="container">
-            <div>
-                <span us-spinner spinner-key="spinner-1"></span>
             </div>
-           <div class="hidden-xs">
-                <message-panel></message-panel>
-            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div>
+            <span us-spinner spinner-key="spinner-1"></span>
         </div>
-        <div ng-view>
+        <div class="hidden-xs">
+            <message-panel></message-panel>
+        </div>
+    </div>
+    <div id="wrap">
+        <div id="main" ng-view>
         </div>
         <div class="visible-xs">
             <message-panel></message-panel>
         </div>
-        <footer>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12 footer">
-                        <p class="copyright text-muted small">Copyright &copy; marvelLabs. All Rights Reserved</p>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </body>
+    </div>
+    <footer class="footer">
+
+        <p class="copyright text-muted small">Copyright &copy; marvelLabs. All Rights Reserved</p>
+
+    </footer>
+</body>
 </html>
 
