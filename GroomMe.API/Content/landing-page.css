@@ -116,6 +116,17 @@
         float: left;
         margin-top: 15px;
     }
+
+     .carousel-caption h3 {
+      font-size: 35px;
+  }
+
+  .carousel-caption p {
+      font-size: 20px;
+  }
+  .carousel-caption h3 p {
+     color: navy;
+ }
 }
 
 @media(max-width:767px) {
@@ -134,68 +145,63 @@
         ul.banner-social-buttons > li:last-child {
             margin-bottom: 0;
         }
-    .content-padding {
+      .content-padding {
         padding-top: 15%;
     }
+
+     .carousel-caption h3 {
+      font-size: 15px;
+     
+  }
+
+  .carousel-caption p {
+      font-size: 8px;
+     
+  }
+  .carousel-caption h3 > p {
+     color: navy;
+ }
 }
 
 p.copyright {
    text-align: center;
 }
 
- .carousel-caption-textpattern1 {
-    right: 50%;
-    left: 20%;
-    padding-bottom: 30px;
-    color: navy;
-      bottom: 450px;
-  }
 
-  .carousel-caption h3 {
-      font-size: 35px;
-  }
-
-
- .carousel-caption-textpattern2 {
-     right: 50%;
-    left: 20%;
-    padding-bottom: 30px;
-    bottom: 500px;
-     color: navy;
- }
-
-  .carousel-caption-textpattern3 {
-    padding-bottom: 30px;
-    bottom: 500px;
-     color: navy;
- }
-  .carousel-caption-textpattern4 {
-    padding-bottom: 30px;
-     color: navy;
- }
-  
-  .carousel-caption p {
-      font-size: 20px;
-      color: navy;
-  }
 
   .carousel-inner > .item > img,
     .carousel-inner > .item > a > img {
         width: 100%;
         margin: auto;
-        height: 30%;
+        height: 20%;
     }
 
 @media(min-width:768px) and (max-width: 1024px) {
     .content-padding {
         padding-top: 10%;
     }
+
+      .carousel-caption h3 {
+      font-size: 35px;
+    
+  }
+
+  .carousel-caption p {
+      font-size: 20px;
+       
+  }
+  .carousel-caption h3 p {
+     color: navy;
+ }
 }
 
 @media(min-width:1025px){
     .content-padding {
         padding-top: 5%;
     }
+    .carousel-caption h3 p {
+     color: navy;
+ }
 }
 
 html, body {
@@ -221,14 +227,15 @@ html, body {
    background-color: #FBB040;
 } 
 
-.animateText {
+.animateTextRight {
   animation-duration: 5s;
-  animation-name: slidein;
+  animation-name: slideRightToLeft;
   animation-iteration-count: 1;
   animation-direction: alternate;
 }
 
-@keyframes slidein {
+
+@keyframes slideRightToLeft {
   from {
     margin-left: 100%;
     width: 300%; 
@@ -239,3 +246,7 @@ html, body {
     width: 100%;
   }
 }
+
+ 
+
+
