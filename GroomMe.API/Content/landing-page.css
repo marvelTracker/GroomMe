@@ -55,6 +55,11 @@
      .content-padding {
      padding-top: 10%;
  }
+     #main {
+         overflow:auto;
+         padding-bottom:150px; /* this needs to be bigger than footer height*/
+         padding-top: 50%;
+    }
 }
 
 .network-name {
