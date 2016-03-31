@@ -176,7 +176,7 @@ p.copyright {
   
   .carousel-caption p {
       font-size: 20px;
-      color: cadetblue;
+      color: navy;
   }
 
   .carousel-inner > .item > img,
@@ -220,3 +220,22 @@ html, body {
     padding-bottom: 20px;
    background-color: #FBB040;
 } 
+
+.animateText {
+  animation-duration: 5s;
+  animation-name: slidein;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%; 
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
