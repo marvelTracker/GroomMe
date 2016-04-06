@@ -187,6 +187,19 @@
             }
         };
 
+        $scope.deleteResource = function() {
+            $scope.startSpin();
+            courseDataService.DeleteCourse($scope.editCourse.courseId).then(function (data) {
+                $scope.stopSpin();
+                $modalInstance.dismiss('cancel');
+                messagePanelService.SendSuccessMessage();
+
+            }, function (error) {
+                $scope.stopSpin();
+                messagePanelService.SendErrorMessage();
+            });
+        };
+
         $scope.filterStatus = function (checkboxModel) {
 
             $scope.filterCourse.isNofilter = false;

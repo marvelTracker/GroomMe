@@ -16,13 +16,15 @@ namespace Web.API.Kata.Data
 
         IQueryable<T> FindById(System.Linq.Expressions.Expression<Func<T, bool>> predicate);
 
-        void Delete(T entity);
+        void Delete(int id);
 
         Task<IList<T>> GetAllAsync(string userId);
 
         Task CreateAsync(T entity);
 
         Task UpdateAsync(T entity);
+
+        Task DeleteAsync(int id);
 
         T Get(System.Linq.Expressions.Expression<Func<T, bool>> predicate);
 

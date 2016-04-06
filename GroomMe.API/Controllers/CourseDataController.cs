@@ -175,8 +175,18 @@ namespace Web.API.Kata.Controllers
 
 
         // DELETE api/coursedata/5
-        public void Delete(int id)
+        public async Task<IHttpActionResult> Delete(int id)
         {
+            try
+            {
+                await _courseRepository.DeleteAsync(id);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex);
+                return InternalServerError();
+            }
         }
 
         private async Task<IList<CourseViewModel>> GetViewModels(string userId)

@@ -77,5 +77,17 @@ namespace Web.API.Kata.Data
                 return result;
             }
         }
+
+        public override async Task DeleteAsync(int id)
+        {
+            using (StoreDataContext dbContext = new StoreDataContext())
+            {
+                var course = dbContext.Courses.FirstOrDefault(s => s.CourseId == id);
+                course.Tags.Clear();
+                dbContext.Courses.Remove(course);
+                await  dbContext.SaveChangesAsync();
+            }
+
+        }
     }
 }

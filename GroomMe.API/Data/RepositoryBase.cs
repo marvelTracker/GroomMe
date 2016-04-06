@@ -52,9 +52,14 @@ namespace Web.API.Kata.Data
             }
         }
 
-        public void Delete(T entity)
+        void IRepository<T>.Delete(int id)
         {
             throw new NotImplementedException();
+        }
+
+        public virtual async Task Delete(int id)
+        {
+
         }
 
         public virtual async Task<IList<T>> GetAllAsync(string userId)
@@ -95,6 +100,11 @@ namespace Web.API.Kata.Data
                 }
 
             }
+        }
+
+        public virtual Task DeleteAsync(int id)
+        {
+            throw new NotImplementedException();
         }
 
         public T Get(Expression<Func<T, bool>> predicate)
