@@ -91,11 +91,27 @@
             });
         };
 
+        var deleteCourse = function(courseId) {
+            return $http({
+                url: baseUrl + "/" + courseId,
+                method: "DELETE",
+                dataType: 'json',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Accept': 'application/json, text/plain, */*',
+                    'Authorization': 'Bearer ' + userDataService.GetProfile().token
+                },
+            }).then(function (response) {
+                return response.data;
+            });
+        };
+
         return {
             GetCourse: getCourse,
             GetCourseData: getCourseData,
             SaveNewCourse: saveNewCourse,
-            EditCourse: editCourse
+            EditCourse: editCourse,
+            DeleteCourse: deleteCourse,
         };
 
     };
