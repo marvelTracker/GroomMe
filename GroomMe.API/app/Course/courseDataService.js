@@ -5,7 +5,7 @@
         
         var getCourse = function (courseid) {
            return $http({
-               url: '/api/CourseData' + "/" + courseid,
+               url: '/api/CourseData/' + courseid,
                 method: "GET",
                 dataType: 'json'
            }).then(function (response) {
@@ -46,7 +46,7 @@
         var editCourse = function(course)
         {
             return $http({
-                url: '/api/CourseData' + "/" + course.courseId,
+                url: '/api/CourseData/' + course.courseId,
                 method: "PUT",
                 data: "name=" + course.name +
                     "&author=" + course.author +
@@ -66,7 +66,7 @@
 
         var deleteCourse = function(courseId) {
             return $http({
-                url: '/api/CourseData' + "/" + courseId,
+                url: '/api/CourseData/' + courseId,
                 method: "DELETE",
                 dataType: 'json'
             }).then(function (response) {
