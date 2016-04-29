@@ -1,9 +1,6 @@
 ﻿(function () {
     var app = angular.module("mainModule");
 
-    //var baseUrl = "http://groomme.apphb.com";
-    var baseUrl = "http://localhost:54052";
-
     var userDataService = function ($http) {
 
         var profile = {
@@ -45,16 +42,10 @@
 
         var userLogin = function (user) {
             return $http({
-                url: baseUrl  + "/token",
+                url: "/token",
                 method: "POST",
                 data: "userName=" + user.UserName + "&password=" + user.Password + 
-              "&grant_type=password",
-
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                    'Accept': 'application/json, text/plain, */*'
-                },               
-
+              "&grant_type=password"
             }).then(function (response) {
                 return response.data;
             });
@@ -62,15 +53,9 @@
 
         var registerUser = function (user) {
            return $http({
-                url: baseUrl + "/api/Account/Register",
+                url: "/api/Account/Register",
                 method: "POST",
-                data: { 'UserName': user.UserName, 'Email':user.Email, 'Password': user.Password, 'ConfirmPassword': user.ConfirmPassword },
-
-                headers: {
-                    'Content-Type': 'application/json;charset=UTF-8',
-                    'Accept': 'application/json, text/plain, */*'
-                
-               }
+                data: { 'UserName': user.UserName, 'Email':user.Email, 'Password': user.Password, 'ConfirmPassword': user.ConfirmPassword }
 
             }).then(function (response) {
                 return response.data;
