@@ -3,8 +3,8 @@
 
     var courseDataService = function ($http, userDataService) {
 
-        var baseUrl = "http://groomme.apphb.com/api/CourseData";
-        //var baseUrl = "http://localhost:54052/api/CourseData";
+        //var baseUrl = "http://groomme.apphb.com/api/CourseData";
+        var baseUrl = "http://localhost:54052/api/CourseData";
         
         var getCourse = function (courseid) {
            return $http({
