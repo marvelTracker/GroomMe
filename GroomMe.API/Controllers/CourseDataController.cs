@@ -153,7 +153,8 @@ namespace Web.API.Kata.Controllers
         {
             try
             {
-                //Test
+                await CheckCourseCanModifyByUser(id);
+
                 var course = await GetCourseByCourseViewModel(courseViewModel);
 
                 await _courseRepository.UpdateAsync(course);
@@ -163,9 +164,20 @@ namespace Web.API.Kata.Controllers
             catch (Exception ex)
             {
                 Log.Error(ex);
-                return InternalServerError();
+                return InternalServerError(ex);
             }
            
+        }
+
+        private async Task CheckCourseCanModifyByUser(int id)
+        {
+            //Check user can update the course
+            var userId = User.Identity.GetUserId();
+
+            var dbCourse = await _courseRepository.GetAsync(s => s.CourseId == id && s.UserId == userId);
+
+            if (dbCourse == null)
+                throw new ArgumentException("No Course found to update");
         }
 
         //This is for partial update.
@@ -179,6 +191,7 @@ namespace Web.API.Kata.Controllers
         {
             try
             {
+                await CheckCourseCanModifyByUser(id);
                 await _courseRepository.DeleteAsync(id);
                 return Ok();
             }

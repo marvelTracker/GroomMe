@@ -1,7 +1,36 @@
 ﻿(function () {
     var app = angular.module("mainModule", ['ngAnimate', "ngRoute", "ui.bootstrap", 'ngTagsInput', 'angularSpinner','gmd.dial']);
     
+    var myInterceptor = function () {
+        return {
+            request: function (config) {
+               config.headers['Content-Type'] = 'application/x-www-form-urlencoded';
+                config.headers['Accept'] = 'application/json, text/plain, */*';
+                config.headers['Authorization'] = 'Bearer ' + localStorage['Access-Token'];
+                config.headers['TEST'] = 'MyTEST';
+                return config;
+            },
+
+            requestError: function (config) {
+                return config;
+            },
+
+            response: function (res) {
+                return res;
+            },
+
+            responseError: function (res) {
+                return res;
+            }
+        };
+    };
+
+    app.factory('myInterceptor', myInterceptor);
+
+
     app.config(['$routeProvider', '$httpProvider', 'usSpinnerConfigProvider', function ($routeProvider, $httpProvider, usSpinnerConfigProvider) {
+        
+        $httpProvider.interceptors.push('myInterceptor');
 
         usSpinnerConfigProvider.setDefaults({ color: 'Blue', lines: 9, length: 8, radius: 4 });
 
