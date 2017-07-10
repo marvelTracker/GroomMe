@@ -20,6 +20,8 @@ namespace Web.API.Kata.Data
 
         Task<IList<T>> GetAllAsync(string userId);
 
+        Task<IList<T>> GetAllAsync();
+
         Task CreateAsync(T entity);
 
         Task UpdateAsync(T entity);

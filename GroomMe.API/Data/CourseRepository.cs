@@ -68,6 +68,17 @@ namespace Web.API.Kata.Data
             }
 
         }
+     
+
+        public override async Task<IList<Course>> GetAllAsync()
+        {
+            using (StoreDataContext dbContext = new StoreDataContext())
+            {
+                var results = await dbContext.Courses.Include("Tags").ToListAsync();
+                return results;
+            }
+
+        }
 
         public override async Task<Course> GetAsync(Expression<Func<Course, bool>> predicate)
         {

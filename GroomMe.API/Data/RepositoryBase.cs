@@ -123,5 +123,15 @@ namespace Web.API.Kata.Data
                 return result;
             }
         }
+
+        public virtual async Task<IList<T>> GetAllAsync()
+        {
+            using (StoreDataContext dataContext = new StoreDataContext())
+            {
+                var results = await dataContext.Set<T>().ToListAsync();
+                return results;
+            }
+        }
+    
     }
 }

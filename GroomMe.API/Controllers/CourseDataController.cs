@@ -36,22 +36,32 @@ namespace Web.API.Kata.Controllers
         // GET api/coursedata
         [EnableCors(origins: "*", headers: "*", methods: "GET")]
         //[System.Web.Http.Authorize(Roles = "Administrator")]
-        public async Task<IHttpActionResult> Get()
+        //public async Task<IHttpActionResult> Get()
+        //{
+        //    try
+        //    {
+        //        var userId = User.Identity.GetUserId();
+
+        //        var results = await GetViewModels(userId);
+
+        //        return Ok(results);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Log.Error(ex);
+        //        return InternalServerError();
+        //    }
+        //}
+
+
+        public async Task<IHttpActionResult>Get()
         {
-            try
-            {
-                var userId = User.Identity.GetUserId();
+            var results = await GetViewModels();
 
-                var results = await GetViewModels(userId);
-
-                return Ok(results);
-            }
-            catch (Exception ex)
-            {
-                Log.Error(ex);
-                return InternalServerError();
-            }
+            return Ok(results);
         }
+
+
 
         // GET api/coursedata/5
         public async Task<IHttpActionResult> Get(int id)
@@ -77,17 +87,17 @@ namespace Web.API.Kata.Controllers
         }
 
         // POST api/coursedata
-        [System.Web.Http.Authorize]
+       // [System.Web.Http.Authorize]
         [ValidateAntiForgeryToken]
         public async Task<IHttpActionResult> Post([FromBody]CourseViewModel courseViewModel)
         {
            try
            {
-                var userId = User.Identity.GetUserId();
+              //  var userId = User.Identity.GetUserId();
 
                 var course = await GetCourseByCourseViewModel(courseViewModel);
 
-                course.UserId = userId;
+                //course.UserId = userId;
 
                 await _courseRepository.CreateAsync(course);
 
@@ -99,6 +109,7 @@ namespace Web.API.Kata.Controllers
                 return InternalServerError();
             }
         }
+
 
         private async Task<Course> GetCourseByCourseViewModel(CourseViewModel courseViewModel)
         {
@@ -206,6 +217,23 @@ namespace Web.API.Kata.Controllers
         {
 
             var result = await _courseRepository.GetAllAsync(userId);
+            var returnList = new List<CourseViewModel>();
+
+            foreach (var course in result)
+            {
+                var viewModel = GetCourseViewModel(course);
+
+                returnList.Add(viewModel);
+            }
+
+            return returnList;
+
+        }
+
+        private async Task<IList<CourseViewModel>> GetViewModels()
+        {
+
+            var result = await _courseRepository.GetAllAsync();
             var returnList = new List<CourseViewModel>();
 
             foreach (var course in result)
