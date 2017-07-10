@@ -4,7 +4,7 @@
     var myInterceptor = function () {
         return {
             request: function (config) {
-               config.headers['Content-Type'] = 'application/x-www-form-urlencoded';
+                config.headers['Content-Type'] = 'application/x-www-form-urlencoded';
                 config.headers['Accept'] = 'application/json, text/plain, */*';
                 config.headers['Authorization'] = 'Bearer ' + localStorage['Access-Token'];
                 config.headers['TEST'] = 'MyTEST';
